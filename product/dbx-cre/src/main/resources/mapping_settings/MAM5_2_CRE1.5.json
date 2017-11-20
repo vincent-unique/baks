@@ -1,0 +1,265 @@
+[
+  {
+    "ADT_CONFIG":{
+      "columns":{
+        "different":{
+          "CONFIGINFOID": "ID"
+        }
+      }
+    }
+  },
+  {
+    "COM_BASICINFO":{
+      "columns":{
+        "different":{
+          "OBJECTID": "ID",
+          "GRADE": "SECURITYID",
+          "AUTOSUBJECT":"ISAUTOSUBJECT",
+          "PROJECTID": "FOLDERID"
+        }
+      }
+    }
+  },
+  {
+    "COM_KEYFRAME":{
+      "columns":{
+        "add":[
+          "ID"
+        ]
+      }
+    }
+  },
+  {
+    "COM_RELATION":{
+      "columns":{
+        "add":[
+          "ID"
+        ]
+      }
+    }
+  },
+
+  {
+    "COM_SEGMENT":{
+      "columns":{
+        "different":{
+          "SEGMENTID":"ID",
+          "OBJECTID": "RESOURCEID"
+        }
+      }
+    }
+  },
+
+  {
+    "COM_QCSEQUENCE":{
+      "columns":{
+        "add":[
+          "ID"
+        ],
+        "different":{
+          "OBJECTID": "RESOURCEID"
+        }
+      }
+    }
+  },
+
+  {
+    "COM_TAG":{
+      "columns":{
+        "add":[
+          "ID"
+        ],
+        "different":{
+          "TAGNAME": "NAME",
+          "REFCOUNT":"REFERCOUNTS",
+          "VIEWCOUNT":"HITCOUNTS"
+        }
+      }
+    }
+  },
+  {
+    "COM_POINT":{
+      "columns":{
+        "different":{
+          "OBJECTID": "RESOURCEID",
+          "OBJECTNAME": "RESOURCENAME"
+        }
+      }
+    }
+  },
+  {
+    "COM_COMMENT":{
+      "columns":{
+        "different":{
+          "COMMENTID": "ID"
+        }
+      }
+    }
+  },
+
+  {
+    "MSM_ATTRIBUTE":{
+      "columns":{
+        "different":{
+          "ATTRIBUTEID": "ID"
+        }
+      }
+    }
+  },
+
+  {
+    "MSM_ATTRIBUTEGROUP":{
+      "columns":{
+        "different":{
+          "AGID": "ID"
+        }
+      }
+    }
+  },
+
+  {
+    "MSM_CATALOGCLASS":{
+      "columns":{
+        "different":{
+          "CCID": "ID"
+        }
+      }
+    }
+  },
+
+  {
+    "MSM_AGCONTENT":{
+      "columns":{
+        "add":[
+          "ID"
+        ]
+      }
+    }
+  },
+
+  {
+    "MSM_CCCONTENT":{
+      "columns":{
+        "add":[
+          "ID"
+        ]
+      }
+    }
+  },
+
+  {
+    "MSM_CATALOGINTERFACE":{
+      "columns":{
+        "different":{
+          "CCID": "ID"
+        }
+      }
+    }
+  },
+
+  {
+    "SPM_FILETYPE":{
+      "columns":{
+        "different":{
+          "FILETYPEID": "ID"
+        }
+      }
+    }
+  },
+
+  {
+    "SPM_STORAGEPATH":{
+      "columns":{
+        "different":{
+          "PATHID": "ID"
+        }
+      }
+    }
+  },
+
+  {
+    "SPM_FILE":{
+      "columns":{
+        "add":[
+          "ID"
+        ],
+        "different":{
+          "OBJECTID": "RESOURCEID",
+          "NAME": "ORIGINALNAME"
+        }
+      }
+    }
+  },
+
+  {
+    "SPM_STORAGEAREA":{
+      "columns":{
+        "different":{
+          "SAID": "ID"
+        }
+      }
+    }
+  },
+
+  {
+    "DDM_CLASS":{
+      "columns": {
+        "add": [
+          "ID"
+        ]
+      }
+    }
+  },
+
+  {
+    "DDM_SUBCLASS":{
+      "columns": {
+        "add": [
+          "ID"
+        ]
+      }
+    }
+  },
+
+  {
+    "DDM_LIMITEDWORD":{
+      "columns":{
+        "different":{
+          "LWID": "ID"
+        }
+      }
+    }
+  },
+  {
+    "DDM_SIMPLELW":{
+      "columns": {
+        "add": [
+          "ID"
+        ]
+      }
+    }
+  },
+  {
+    "DDM_APPLICATIONRESOURCE":{
+      "columns":{
+        "different":{
+          "RID": "ID",
+          "RKEY": "KEY",
+          "RLOCALE": "LOCALE",
+          "RVALUE": "VALUE"
+        }
+      }
+    }
+  },
+
+  {
+    "SCP_STREAMMEDIAINFO":{
+      "columns":{
+        "different":{
+          "STREAMMEDIAID": "ID"
+        }
+      }
+    }
+  }
+
+]

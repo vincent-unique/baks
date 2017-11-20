@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>fly my data</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+    <link href="../css/library/bootstrap.min.css" rel="stylesheet" type="text/css" th:src="@{/css/bootstrap.min.css}"/>
+    <link href="../css/common.css" rel="stylesheet" type="text/css" th:href="@{/css/common.css}"/>
+    <link href="../css/home.css" rel="stylesheet" type="text/css" th:href="@{/css/home.css}"/>
+</head>
+
+<body>
+<h2>Fly my data</h2>
+<div class="container">
+    <div class="page-container margin-top-0 detail-content">
+        <div class="version-nav">
+            <p class="name">数据库连接</p>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="portlet">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="fa fa-tasks"></i>
+                            <span class="caption-subject">源数据库</span>
+                        </div>
+                    </div>
+                    <div class="portlet-body">
+                        <form id="da-source-conn-data" role="form" class="form-horizontal">
+                            <div class="form-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">数据库类型<span class="required">*</span></label>
+                                            <div class="col-md-9">
+                                                <select class="bs-select form-control" name="productName">
+                                                    <option value="sqlserver">SQL Server</option>
+                                                    <option value="oracle">Oracle</option>
+                                                    <option value="mysql">MySQL</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">数据库名称<span class="required">*</span></label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" name="dbName">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">数据库服务器IP地址<span class="required">*</span></label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" name="ipAddr" placeholder="HostName OR IP">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">端口号</label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" name="port" placeholder="1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">数据库Schema</label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" name="schema" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">媒资版本号<span class="required">*</span></label>
+                                            <div class="col-md-9">
+                                                <select class="bs-select form-control" name="mamVersion">
+                                                    <option>CCTVMAM</option>
+                                                    <option>MAM*</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">用户名<span class="required">*</span></label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" name="username">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">密码<span class="required">*</span></label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" name="password">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- END PORTLET-->
+                <div class="portlet">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="fa fa-tasks"></i>
+                            <span class="caption-subject">CRE数据库</span>
+                        </div>
+                    </div>
+                    <div class="portlet-body">
+                        <form id="da-target-conn-data" role="form" class="form-horizontal">
+                            <div class="form-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">数据库类型<span class="required">*</span></label>
+                                            <div class="col-md-9">
+                                                <select class="bs-select form-control" name="productName">
+                                                    <option value="sqlserver">SQL Server</option>
+                                                    <option value="oracle">Oracle</option>
+                                                    <option value="mysql">MySQL</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">数据库名称<span class="required">*</span></label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" name="dbName">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">数据库服务器IP地址<span class="required">*</span></label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" name="ipAddr" placeholder="100.0.10.123">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">端口号</label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" name="port" placeholder="3306">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">数据库Schema</label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" name="schema" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">用户名<span class="required">*</span></label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" name="username">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">密码<span class="required">*</span></label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" name="password">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="form-button">
+            <button id="da-connect" class="btn btn-info">登录</button>
+        </div>
+        <div id="connection-hint-success" class="alert alert-info" style="display: none">
+            数据库连接成功，请稍后......
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-inner">
+
+        </div>
+        <div class="footer-tools">
+                <span class="go-top">
+                    <i class="fa fa-angle-up"></i>
+                </span>
+        </div>
+    </div>
+</div>
+<script src="../js/library/jquery.min.js" type="text/javascript" th:src="@{/js/library/jquery.min.js}"></script>
+<script src="../js/library/bootstrap.min.js" type="text/javascript" th:href="@{js/library/bootstrap.min.js}"></script>
+<script type="text/javascript" src="../../js/lib/components-dropdowns.js" th:href="@{/js/lib/components-dropdowns.js}"></script>
+<script type="text/javascript" src="../js/scripts/home.js" th:href="@{/jjs/scripts/home.js}"></script>
+<script>
+    jQuery(document).ready(function() {
+        ComponentsDropdowns.init();
+        var bodyminheight=$(window).innerHeight()-$('.footer').outerHeight()-20;
+        $('.page-container').css('min-height',bodyminheight);
+    });
+</script>
+</body>
+</html>

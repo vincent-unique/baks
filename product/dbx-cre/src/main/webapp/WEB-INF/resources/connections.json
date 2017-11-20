@@ -1,0 +1,18 @@
+{
+  "srcInfo":{
+    "dbName":"oradb",
+    "host":"100.0.10.51",
+    "port":"1521",
+    "schema":"",
+    "username":"CRE_YANFA",
+    "password":"CRE_YANFA"
+  },
+  "tgtInfo":{
+    "dbName":"oradb",
+    "host":"100.0.10.51",
+    "port":"1521",
+    "schema":"",
+    "username":"CRE_V10",
+    "password":"CRE_V10"
+  }
+}

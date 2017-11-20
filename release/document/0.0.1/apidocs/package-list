@@ -1,0 +1,7 @@
+org.trump.vincent.core
+org.trump.vincent.defaults
+org.trump.vincent.defaults.mappings
+org.trump.vincent.model
+org.trump.vincent.model.commons
+org.trump.vincent.orm
+org.trump.vincent.utilities

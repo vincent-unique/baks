@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.dayang</groupId>
+	<artifactId>dbx-cre</artifactId>
+	<version>0.0.1</version>
+	<packaging>war</packaging>
+
+	<name>dbx-cre</name>
+	<description>fly database for cre</description>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.6.RELEASE</version>
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<spring-boot-vesion>1.5.6.RELEASE</spring-boot-vesion>
+		<snakeyaml.version>1.17</snakeyaml.version>
+		<java.version>1.7</java.version>
+		<thymeleaf.version>3.0.0.RELEASE</thymeleaf.version>
+		<thymeleaf-layout-dialect.version>2.0.0</thymeleaf-layout-dialect.version>
+		<!--OverWrite jetty version from SpringBoot-jetty-properties for being compatible with javase1.7-->
+		<jetty.version>9.2.0.M0</jetty.version>
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+			<artifactId>DBX</artifactId>
+			<groupId>org.trump.vincent</groupId>
+			<version>0.0.1</version>
+			<type>pom</type>
+		</dependency>
+
+		<!--<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jdbc</artifactId>
+			<version>${spring-boot-vesion}</version>
+		</dependency>-->
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+			<!--<version>${spring-boot-vesion}</version>-->
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<version>${spring-boot-vesion}</version>
+			<exclusions>
+				<!-- You may prefer Jetty instead of embed tomcat-->
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-tomcat</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!--Embeded tomcat is default in spting-boot-start-web; but you may prefer jetty more .-->
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-jetty -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jetty</artifactId>
+			<version>${spring-boot-vesion}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.yaml/snakeyaml -->
+		<!-- Java parser for Yaml -->
+		<dependency>
+			<groupId>org.yaml</groupId>
+			<artifactId>snakeyaml</artifactId>
+			<version>${snakeyaml.version}</version>
+		</dependency>
+
+		<!--<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+-->
+		<!--My-open-source SDK-->
+		<!--You can find it in my github[ Vincent-unique ]-->
+		<dependency>
+			<groupId>org.trump.vincent</groupId>
+			<artifactId>dbx-sdk</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<finalName>dbx</finalName>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+
+</project>
