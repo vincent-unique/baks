@@ -49,7 +49,6 @@ public class Generator {
      */
     public static String generateDDL4Oracle(@NotNull TableMeta sourceTable ,String sourceDriverType, String replaceTableName){
 
-        //TODO generate DDL SQL for Oracle
         if(Strings.isNullOrEmpty(replaceTableName)){
             replaceTableName = sourceTable.getName();
         }
