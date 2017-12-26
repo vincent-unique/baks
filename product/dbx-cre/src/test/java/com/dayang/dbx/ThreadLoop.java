@@ -10,15 +10,20 @@ public class ThreadLoop {
 
     private Thread worker;
 
-    public void loop(){
-        while (true){
-            if(this.worker==null){
-                System.out.println("The worker null and will be rebuild.");
-                this.worker = new CoreTask();
-                this.worker.start();
-            }else if(!this.worker.isAlive()){
-                this.worker.start();
-            }
+    public void loop() {
+        if (this.worker == null) {
+            System.out.println("The worker null and will be rebuild.");
+            this.worker = new CoreTask();
+            this.worker.start();
+        }
+    }
+
+    class WorkUncaughtExceptionHander implements Thread.UncaughtExceptionHandler{
+        @Override
+        public void uncaughtException(Thread t, Throwable e) {
+            e.printStackTrace();
+            worker = new CoreTask();
+            worker.start();
         }
     }
 
@@ -26,6 +31,7 @@ public class ThreadLoop {
 
         private final AtomicInteger counter = new AtomicInteger(0);
         public void run(){
+            Thread.setDefaultUncaughtExceptionHandler(new WorkUncaughtExceptionHander());
             while (true){
                 System.out.println("Counter:"+counter.get());
                 if(counter.getAndIncrement()/5==0){
