@@ -60,7 +60,8 @@ public class ConnectionInfo {
             urlStr.append("@").append(host)
                     .append(":").append(
                     (port!=null&&port>0)?port:1521
-                ).append(":").append(dbName);
+//                ).append(":").append(dbName);
+                ).append("/").append(dbName); // adjust for oracle cluster
             return String.valueOf(urlStr);
 
         }else {
